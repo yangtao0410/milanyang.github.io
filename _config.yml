@@ -1,22 +1,22 @@
 # Site settings
-title: Your Blog
-SEOTitle: 你的博客 | Your Blog
+title: 阳涛的博客
+SEOTitle: 阳涛的博客 | Your Blog
 header-img: img/home-bg.jpg
-email: huxpro@gmail.com
-description: ""
+email: yangtao0410@gmail.com
+description: "为了寻找你，我搬进鸟的眼睛，经常盯着路过的风。"
 keyword: ""
-url: "http://huangxuan.me"              # your host, for absolute URL
-baseurl: "/huxblog-boilerplate"         # for example, '/blog' if your blog hosted on 'host/blog'
+url: "https://yangtao0410.github.io/"              # your host, for absolute URL
+baseurl: "/"         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
 # SNS settings
 RSS: false
-weibo_username:     huxpro
-zhihu_username:     huxpro
-github_username:    huxpro
+weibo_username:     2286786984
+#zhihu_username:     huxpro
+github_username:    yangtao0410
 #twitter_username:  huxpro
-facebook_username:  huxpro
+#facebook_username:  huxpro
 
 
 
@@ -68,8 +68,8 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，做做设计，看看产品。世界那么大，多玩玩看看。"
-sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "为了寻找你，我搬进鸟的眼睛，经常盯着路过的风。"
+#sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -85,8 +85,8 @@ friends: [
         title: "Hux Blog",
         href: "http://huangxuan.me"
     },{
-        title: "Foo",
-        href: "#"
+        title: "liming Blog",
+        href: "https://whulm.cn/"
     },{
         title: "Bar",
         href: "#"
