@@ -1,6 +1,6 @@
 # Site settings
 title: 阳涛的博客
-SEOTitle: 阳涛的博客 | Your Blog
+SEOTitle: 阳涛的博客
 header-img: img/home-bg.jpg
 email: yangtao0410@gmail.com
 description: "为了寻找你，我搬进鸟的眼睛，经常盯着路过的风。"
@@ -47,12 +47,12 @@ kramdown:
 
 
 # Disqus settings
-#disqus_username: _your_disqus_short_name_
+#disqus_username: https://yangtao0410.github.io/
 
 # Duoshuo settings
-duoshuo_username: huxblog
+#duoshuo_username: huxblog
 # Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: false                    # set to false if you want to use Comment without Sharing
+#duoshuo_share: false                    # set to false if you want to use Comment without Sharing
 
 
 
@@ -62,13 +62,13 @@ duoshuo_share: false                    # set to false if you want to use Commen
 #ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 # Google Analytics
 ga_track_id: 'UA-127584821-1'            # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+ga_domain: auto
 
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "为了寻找你，我搬进鸟的眼睛，经常盯着路过的风。"
+sidebar-about-description: "学习者"
 #sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -82,19 +82,7 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "Hux Blog",
-        href: "http://huangxuan.me"
-    },{
         title: "liming Blog",
         href: "https://whulm.cn/"
-    },{
-        title: "Bar",
-        href: "#"
-    },{
-        title: "Example Friends",
-        href: "#"
-    },{
-        title: "It helps SEO",
-        href: "#"
     }
 ]

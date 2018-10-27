@@ -1,0 +1,52 @@
+---
+layout:     post
+title:      "git的合并、重置、回滚等学习"
+subtitle:   " \"Hello World, Hello Blog\""
+date:       2018-10-27 21:40:00
+author:     "yangtao"
+header-img: "img/post-bg-2015.jpg"
+tags:
+    - git 工具
+---
+
+> “结对编程，苦学一天 ”
+
+实战才是王道，之前git断断续续学过几次，概念不外乎工作区，暂存区，仓库等等，看下来概念没什么难的。但真正用到的时候就碰到问题了，最近开始跟同事一起开发一块需求，要把他的代码合过来，中间碰到坑了，记录一下。
+
+用的git工具是sourcetree，提交拉取代码，看历史commit树都挺方便的。但是碰到问题就不如git方便了。
+## merge
+合并其实很简单，只有两个分支都对某个文件进行修改时，才会发生冲突，这时需要进行冲突解决。冲突解决可选择当前head的或their(他人)分支的内容，也可自己对冲突文件修改，冲突文件会通过head、branch-name来区分冲突的代码。
+
+如果两个分支中只有一个分支对其进行修改，则不会冲突。
+
+用软件跟命令行都能看出哪些文件有变化或冲突，没有冲突的直接加入暂存区了，有冲突的需要解决，不然不能提交。
+这里前一天晚上在sourcetree上直接点到暂存区了，造成一大批有head branchname冲突的文件，直接选择用哪个分支的文件解决冲突应该更快。
+## git reset
+对应sourcetree软件上的重置到这次提交，可以把head重置到某次commit,可加参数
+```
+--soft 回退后a分支修改的代码被保留并标记为add的状态（git status 是绿色的状态）
+--mixed 重置索引，但不重置工作树，更改后的文件标记为未提交（add）的状态。默认操作。
+--hard 重置索引和工作树，并且a分支修改的所有文件和中间的提交，没提交的代码都被丢弃了。
+--merge 和--hard类似，只不过如果在执行reset命令之前你有改动一些文件并且未提交，merge会保留你的这些修改，hard则不会。【注：如果你的这些修改add过或commit过，merge和hard都将删除你的提交】
+--keep 和--hard类似，执行reset之前改动文件如果是a分支修改了的，会提示你修改了相同的文件，不能合并。如果不是a分支修改的文件，会移除缓存区。git status还是可以看到保持了这些修改。
+```
+soft mix hard 在软件上都有一一对应，在没有推送到远程时可以随意reset，重置后提交即可。
+
+但当已经推送到远程时，![image](https://note.youdao.com/src/527852E41C964BE48A9AC2B17CE0A38C)，会显示落后n个版本，此时直接push会报错Updates were rejected because the tip of your current branch is behind。
+此时需要在命令行加上-f 选项
+```
+git push -f origin
+Total 0 (delta 0), reused 0 (delta 0)
+remote: Processing changes: done
+remote: Updating references: 100% (1/1)
+To http://git.code.oa.com/qcloud_iov/public_access.git
+ + 74bcf86...d15c98a gitstudytest -> gitstudytest (forced update)
+```
+此时远端的回滚也完成
+
+## git revert
+跟reset类似，revert也是回滚。但不同的是revert回滚某次选中的提交，也就是选中某个提交，按这个提交的逆操作进行回滚。
+revert按commit的逆操作进行新的提交，head会前进（reset的head往后退）
+
+
+
