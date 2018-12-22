@@ -32,8 +32,9 @@ tags:
 ```
 soft mix hard 在软件上都有一一对应，在没有推送到远程时可以随意reset，重置后提交即可。
 
-但当已经推送到远程时，![image](https://note.youdao.com/src/527852E41C964BE48A9AC2B17CE0A38C)，会显示落后n个版本，此时直接push会报错Updates were rejected because the tip of your current branch is behind。
+但当已经推送到远程时，![image](../img/1027-git-sourcetree-落后版本.png)，会显示落后n个版本，此时直接push会报错Updates were rejected because the tip of your current branch is behind。
 此时需要在命令行加上-f 选项
+
 ```
 git push -f origin
 Total 0 (delta 0), reused 0 (delta 0)
