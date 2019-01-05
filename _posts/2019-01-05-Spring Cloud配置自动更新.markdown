@@ -46,7 +46,7 @@ Spring Cloud的配置更新基于此类，在收到配置中心的更新之后�
 Spring Cloud收到EnvironmentChangeEvent事件会重新绑定使用了@ConfigurationProperties 注解的 Spring Bean。
 
 #### @RefreshScope
-@RefreshScope里这个Scope与我们使用IOC的protoType与singleton是一类东西，定义了bean的生命周期与使用方式等。
+使用了@RefreshScope这个注解的bean收到事件会自动更新。@RefreshScope里这个Scope与我们使用IOC的protoType与singleton是一类东西，定义了bean的生命周期与使用方式等。
 
 所有 @RefreshScope 的 Bean 都是延迟加载的，只有在第一次访问时才会初始化。这个类中有一个成员变量cache，用于缓存所有已经生成的Bean，在调用get方法时尝试从缓存加载，实现自动更新只需要清空缓存即可。
 
